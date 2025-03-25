@@ -1,0 +1,149 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #FCFC30;
+    color: #465EFF;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    /* Altura fixa do header */
+}
+
+.header-logo {
+    width: 120px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #465EFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Seções ocupando a tela inteira (menos o header) */
+section {
+    min-height: calc(100vh);
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Títulos das sessões */
+section h2 {
+    color: #3333BD;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Seção 1 ocupando a tela inteira sem margens ou paddings */
+#section1 {
+    position: relative;
+    height: 100vh;
+    /* Ocupa toda a altura da viewport */
+    background: url('../assets/background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Logo posicionada no canto superior direito */
+#section1 img.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    height: auto;
+}
+
+/* Conteúdo do lado esquerdo, centralizado verticalmente */
+.section1-content {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 400px;
+}
+
+/* Estilização dos textos */
+.section1-content h2 {
+    color: #3333BD;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: left;
+}
+
+.section1-content p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Botão Call to Action */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #465EFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.cta-button:hover {
+    background-color: #3333BD;
+}
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .header-logo {
+        width: 100px;
+    }
+
+    .section1-content {
+        max-width: 90%;
+    }
+}
