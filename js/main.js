@@ -32,3 +32,22 @@ function loadComponent(url, elementId) {
         })
         .catch(error => console.error('Erro ao carregar o componente:', error));
 }
+
+document.querySelectorAll('.card-header').forEach(header => {
+    function toggleCard() {
+        const card = header.parentElement;
+        const isActive = card.classList.toggle('active');
+        header.setAttribute('aria-expanded', isActive);
+    }
+
+    header.addEventListener('click', toggleCard);
+
+    header.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleCard();
+        }
+    });
+});
+
+

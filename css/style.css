@@ -202,6 +202,8 @@ section h2 {
     max-width: 600px;
     width: 100%;
     margin: 20px;
+    height: fit-content;
+    
 }
 
 #section4.tester-section .card h2 {
@@ -229,6 +231,7 @@ section h2 {
 #section4.tester-section .card .form-group {
     display: flex;
     flex-direction: column;
+
 }
 
 #section4.tester-section .card label {
@@ -266,4 +269,93 @@ section h2 {
 
 #section4.tester-section .card .btn-cadastrar:hover {
     background-color: #3333BD;
+}
+
+/* Container dos cards utilizando grid */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    /* Define a altura de cada linha para manter o mesmo tamanho */
+    gap: 20px;
+    max-width: 1000px;
+    /* Ajuste conforme necessário */
+    margin: 0 auto;
+}
+
+/* Estilo base do card */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    /* Garantindo que o card ocupe o tamanho definido pela grid */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Cabeçalho do card com ícone acima da label */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    flex-shrink: 0;
+}
+
+/* Ícone com tamanho maior */
+.card-icon {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 10px;
+}
+
+/* Label do card centralizada */
+.card-label {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Corpo do card (conteúdo) */
+.card-body {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Exibição do card expandido */
+.card.active .card-body {
+    display: block;
+}
+
+/* Efeito hover */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Animação simples */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade: em telas menores, ajustar o grid para duas colunas */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
