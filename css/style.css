@@ -37,6 +37,15 @@ header {
     /* Altura fixa do header */
 }
 
+footer {
+    color: #FCFC30;;
+    background-color: #465EFF;
+    text-align: center;
+    padding: 10px;
+    
+    
+}
+
 .header-logo {
     width: 70px;
 }
@@ -93,9 +102,10 @@ section h2 {
 #section1 img.logo {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 10px;
     width: 300px;
     height: auto;
+    opacity: 0.4;
 }
 
 /* Conteúdo do lado esquerdo, centralizado verticalmente */
@@ -144,13 +154,7 @@ section h2 {
 .cta-button:hover {
     background-color: #3333BD;
 }
-/* Footer */
-footer {
-    background-color: #f1f1f1;
-    color: #333;
-    text-align: center;
-    padding: 20px;
-}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -172,4 +176,94 @@ footer {
     .section1-content {
         max-width: 90%;
     }
+}
+/* Estilização da Section de Tester */
+/* Section com background em tela inteira */
+#section4.tester-section {
+    position: relative;
+    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../assets/background-2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card centralizado */
+#section4.tester-section .card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+}
+
+#section4.tester-section .card h2 {
+    color: #465EFF;
+    /* Azul */
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+#section4.tester-section .card .subtitle {
+    color: #3333BD;
+    /* Variação de azul */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
+
+#section4.tester-section .card form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#section4.tester-section .card .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+#section4.tester-section .card label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#section4.tester-section .card input {
+    padding: 10px;
+    border: 2px solid #465EFF;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+}
+
+#section4.tester-section .card input:focus {
+    outline: none;
+    border-color: #3333BD;
+    box-shadow: 0 0 5px rgba(70, 94, 255, 0.5);
+}
+
+/* Botão de cadastro */
+#section4.tester-section .card .btn-cadastrar {
+    padding: 12px;
+    background-color: #465EFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+#section4.tester-section .card .btn-cadastrar:hover {
+    background-color: #3333BD;
 }
