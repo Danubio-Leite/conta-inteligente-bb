@@ -5,8 +5,23 @@
     box-sizing: border-box;
 }
 
+/* 1. Declaração das fontes personalizadas */
+@font-face {
+    font-family: 'BancoDoBrasilTitulos';
+    src: url('../assets/fonts/BancoDoBrasilTitulos-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BancoDoBrasilTextos';
+    src: url('../assets/fonts/BancoDoBrasilTextos-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'BancoDoBrasilTextos', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
 }
@@ -15,16 +30,15 @@ body {
 header {
     background-color: #FCFC30;
     color: #465EFF;
-    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
+    height: 50px;
     /* Altura fixa do header */
 }
 
 .header-logo {
-    width: 120px;
+    width: 70px;
 }
 
 header nav ul {
@@ -63,10 +77,16 @@ section h2 {
 /* Seção 1 ocupando a tela inteira sem margens ou paddings */
 #section1 {
     position: relative;
-    height: 100vh;
-    /* Ocupa toda a altura da viewport */
-    background: url('../assets/background.jpg') no-repeat center center;
+    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../assets/background2.jpg') no-repeat center center;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Logo posicionada no canto superior direito */
@@ -81,23 +101,25 @@ section h2 {
 /* Conteúdo do lado esquerdo, centralizado verticalmente */
 .section1-content {
     position: absolute;
-    left: 20px;
+    left: 15%;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 400px;
+    max-width: 500px;
 }
 
 /* Estilização dos textos */
 .section1-content h2 {
+    font-family: 'BancoDoBrasilTitulos', sans-serif;
     color: #3333BD;
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: left;
 }
 
 .section1-content p {
     text-align: left;
     margin-bottom: 20px;
+    
 }
 
 /* Botão Call to Action */
@@ -113,6 +135,10 @@ section h2 {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: fit-content;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .cta-button:hover {
