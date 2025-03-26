@@ -1,0 +1,99 @@
+/* section2.css */
+
+#section2 {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilização do título da section */
+#section2 h2 {
+    font-family: 'BancoDoBrasilTitulos', sans-serif;
+    color: #465EFF;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* Container dos Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo base dos Cards */
+.card {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* Removida a altura fixa para permitir ajuste automático */
+}
+
+/* Cabeçalho do Card */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    flex-shrink: 0;
+}
+
+/* Ícone do Card */
+.card-icon {
+    width: 128px;
+    height: 128px;
+    margin-bottom: 10px;
+}
+
+/* Label do Card */
+.card-label {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Corpo do Card com transição para expansão */
+.card-body {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+
+/* Exibição do Card expandido */
+.card.active .card-body {
+    max-height: 300px;
+    /* Ajuste esse valor conforme o tamanho do conteúdo */
+    opacity: 1;
+}
+
+/* Efeito Hover */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsividade: Grid em 2 colunas em telas menores */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

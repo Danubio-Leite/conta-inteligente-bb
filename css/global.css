@@ -1,0 +1,87 @@
+/* global.css */
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Declaração das Fontes Personalizadas */
+@font-face {
+    font-family: 'BancoDoBrasilTitulos';
+    src: url('../assets/fonts/BancoDoBrasilTitulos-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BancoDoBrasilTextos';
+    src: url('../assets/fonts/BancoDoBrasilTextos-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos Globais do Body */
+body {
+    font-family: 'BancoDoBrasilTextos', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilos do Header */
+header {
+    background-color: #FCFC30;
+    color: #465EFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    border-bottom: 4px solid #465EFF;
+}
+
+.header-logo {
+    width: 70px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #465EFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos do Footer */
+footer {
+    background-color: #465EFF;
+    color: #FCFC30;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Regras Globais de Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .header-logo {
+        width: 100px;
+    }
+}

@@ -1,0 +1,68 @@
+/* section1.css */
+
+/* Estilos da Seção 1 */
+#section1 {
+    position: relative;
+    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../assets/background2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section1 img.logo {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width: 300px;
+    height: auto;
+    opacity: 0.4;
+}
+
+.section1-content {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 500px;
+}
+
+.section1-content h2 {
+    font-family: 'BancoDoBrasilTitulos', sans-serif;
+    color: #465EFF;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    text-align: left;
+}
+
+.section1-content p {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #465EFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cta-button:hover {
+    background-color: #3333BD;
+}

@@ -1,0 +1,76 @@
+/* Estilos da Seção 3 */
+#section3 {
+    position: relative;
+    min-height: calc(100vh);
+    width: 100%;
+    margin: 0;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#section3 h2 {
+    font-family: 'BancoDoBrasilTitulos', sans-serif;
+    color: #465EFF;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+#section3 ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+#section3 ul li {
+    display: flex;
+    justify-content: space-between;
+    /* Mantém imagem à direita */
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    /* Removido: padding, borda e arredondamento para eliminar o efeito "card" */
+    /* padding: 10px; */
+    /* border: 1px solid #eee; */
+    /* border-radius: 4px; */
+}
+
+/* Container do conteúdo do tópico */
+.topic-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Garante que o texto fique alinhado à esquerda */
+    max-width: 60%;
+    /* Limita a largura do texto para melhor legibilidade */
+}
+
+/* Título em azul claro */
+.topic-content h3 {
+    color: #54DCFC;
+    margin: 0;
+}
+
+/* Divider entre o título e o conteúdo */
+.divider {
+    width: 50px;
+    /* Diminuído para ser mais sutil */
+    height: 1px;
+    background-color: #54DCFC;
+    margin: 8px 0;
+}
+
+/* Estilo da imagem do tópico */
+.topic-image img {
+    max-width: 300px;
+    height: auto;
+    margin-left: 20px;
+}

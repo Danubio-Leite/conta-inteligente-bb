@@ -1,5 +1,3 @@
-// javascript
-
 document.addEventListener("DOMContentLoaded", function () {
     loadComponent('components/header.html', 'header');
     loadComponent('components/footer.html', 'footer');
@@ -22,6 +20,16 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error('Erro ao carregar a seção:', error));
     });
+
+    // Delegação de eventos para capturar cliques nos card headers
+    mainContent.addEventListener('click', function (event) {
+        const header = event.target.closest('.card-header');
+        if (header) {
+            const card = header.parentElement;
+            const isActive = card.classList.toggle('active');
+            header.setAttribute('aria-expanded', isActive);
+        }
+    });
 });
 
 function loadComponent(url, elementId) {
@@ -32,22 +40,3 @@ function loadComponent(url, elementId) {
         })
         .catch(error => console.error('Erro ao carregar o componente:', error));
 }
-
-document.querySelectorAll('.card-header').forEach(header => {
-    function toggleCard() {
-        const card = header.parentElement;
-        const isActive = card.classList.toggle('active');
-        header.setAttribute('aria-expanded', isActive);
-    }
-
-    header.addEventListener('click', toggleCard);
-
-    header.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggleCard();
-        }
-    });
-});
-
-
