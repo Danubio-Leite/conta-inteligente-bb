@@ -1,5 +1,4 @@
-/* section2.css */
-
+/* Container geral da seção */
 #section2 {
     position: relative;
     min-height: 100vh;
@@ -12,11 +11,11 @@
     justify-content: center;
 }
 
-/* Estilização do título da section */
+/* Título da seção */
 #section2 h2 {
     font-family: 'BancoDoBrasilTitulos', sans-serif;
     color: #465EFF;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     text-align: center;
     font-size: 2rem;
 }
@@ -26,7 +25,7 @@
     display: grid;
     grid-template-columns: repeat(3, 300px);
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -42,24 +41,29 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    /* Removida a altura fixa para permitir ajuste automático */
 }
 
 /* Cabeçalho do Card */
 .card-header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     padding: 15px;
     background-color: #f7f7f7;
-    flex-shrink: 0;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.card-header:focus {
+    box-shadow: 0 0 0 3px rgba(70, 94, 255, 0.5);
 }
 
 /* Ícone do Card */
 .card-icon {
     width: 128px;
     height: 128px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 /* Label do Card */
@@ -67,23 +71,38 @@
     font-size: 1.2rem;
     color: #333;
     text-align: center;
+    flex: 1;
 }
 
-/* Corpo do Card com transição para expansão */
+/* Ícone de seta para indicar expansão */
+.card-arrow {
+    margin-left: auto;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-right: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.card.active .card-arrow {
+    transform: rotate(225deg);
+}
+
+/* Corpo do Card com transição suave */
 .card-body {
-    padding: 15px;
-    border-top: 1px solid #ddd;
     overflow: hidden;
-    max-height: 0;
+    height: 0;
     opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.3s ease;
+    transition: height 0.35s ease, opacity 0.35s ease;
+    padding: 0px 15px;
 }
 
-/* Exibição do Card expandido */
 .card.active .card-body {
-    max-height: 300px;
-    /* Ajuste esse valor conforme o tamanho do conteúdo */
     opacity: 1;
+    padding: 15px 30px;
+
 }
 
 /* Efeito Hover */
@@ -91,7 +110,7 @@
     transform: translateY(-5px);
 }
 
-/* Responsividade: Grid em 2 colunas em telas menores */
+/* Responsividade: 2 colunas em telas menores */
 @media (max-width: 768px) {
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
