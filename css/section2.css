@@ -53,6 +53,8 @@
     outline: none;
     position: relative;
     transition: background-color 0.3s ease;
+    border: none;
+    outline: none;
 }
 
 .card-header:focus {
@@ -74,21 +76,6 @@
     flex: 1;
 }
 
-/* Ícone de seta para indicar expansão */
-.card-arrow {
-    margin-left: auto;
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border-right: 2px solid #333;
-    border-bottom: 2px solid #333;
-    transform: rotate(45deg);
-    transition: transform 0.3s ease;
-}
-
-.card.active .card-arrow {
-    transform: rotate(225deg);
-}
 
 /* Corpo do Card com transição suave */
 .card-body {
