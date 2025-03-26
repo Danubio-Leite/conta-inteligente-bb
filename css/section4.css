@@ -35,7 +35,6 @@
 }
 
 #section4.tester-section .card .subtitle {
-    
     text-align: center;
     margin-bottom: 30px;
     font-size: 1.2rem;
@@ -88,4 +87,41 @@
 
 #section4.tester-section .card .btn-cadastrar:hover {
     background-color: #3333BD;
+}
+
+/* Media Queries para Mobile */
+@media only screen and (max-width: 768px) {
+
+    /* Ajusta o container da seção para acomodar conteúdo variável */
+    #section4.tester-section {
+        height: auto;
+        padding: 20px;
+    }
+
+    /* Reduz o padding e o margin do card, além de ajustar a largura máxima */
+    #section4.tester-section .card {
+        padding: 20px;
+        margin: 10px;
+        max-width: 90%;
+    }
+
+    /* Diminui o tamanho do título e da legenda */
+    #section4.tester-section .card h2 {
+        font-size: 2rem;
+    }
+
+    #section4.tester-section .card .subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    /* Ajusta inputs e botão para melhor leitura */
+    #section4.tester-section .card input {
+        font-size: 0.9rem;
+    }
+
+    #section4.tester-section .card .btn-cadastrar {
+        font-size: 1rem;
+        padding: 10px;
+    }
 }

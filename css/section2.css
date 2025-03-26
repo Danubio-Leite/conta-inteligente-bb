@@ -102,7 +102,6 @@
 .card.active .card-body {
     opacity: 1;
     padding: 15px 30px;
-
 }
 
 /* Efeito Hover */
@@ -110,9 +109,58 @@
     transform: translateY(-5px);
 }
 
-/* Responsividade: 2 colunas em telas menores */
-@media (max-width: 768px) {
+/* Responsividade: Ajustes para Mobile */
+@media only screen and (max-width: 768px) {
+
+    /* Ajusta o container geral */
+    #section2 {
+        padding: 10px;
+    }
+
+    /* Reduz o tamanho do título */
+    #section2 h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* Ajusta grid dos cards para 2 colunas */
     .cards-container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 100%;
+    }
+
+    /* Centraliza os cards e ajusta padding interno */
+    .card {
+        margin: 0 auto;
+    }
+
+    .card-header {
+        padding: 10px;
+    }
+
+    /* Reduz o tamanho do ícone do card */
+    .card-icon {
+        width: 100px;
+        height: 100px;
+        margin-right: 5px;
+    }
+
+    /* Ajusta a fonte da label */
+    .card-label {
+        font-size: 1rem;
+    }
+
+    /* Reduz o padding do corpo do card */
+    .card-body {
+        padding: 10px 15px;
+    }
+}
+
+/* Responsividade extra para telas muito pequenas */
+@media only screen and (max-width: 480px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }

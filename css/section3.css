@@ -36,10 +36,6 @@
     align-items: center;
     margin: 10px 0;
     font-size: 1.1rem;
-    /* Removido: padding, borda e arredondamento para eliminar o efeito "card" */
-    /* padding: 10px; */
-    /* border: 1px solid #eee; */
-    /* border-radius: 4px; */
 }
 
 /* Container do conteúdo do tópico */
@@ -73,4 +69,44 @@
     max-width: 300px;
     height: auto;
     margin-left: 20px;
+}
+
+/* Media Queries para Mobile */
+@media only screen and (max-width: 768px) {
+
+    /* Reduz o espaçamento interno e centraliza o conteúdo */
+    #section3 {
+        padding: 30px 20px;
+        align-items: center;
+    }
+
+    /* Ajusta o tamanho do título */
+    #section3 h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Altera o layout dos itens da lista para empilhar verticalmente */
+    #section3 ul li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Amplia a área de conteúdo do tópico e centraliza o texto */
+    .topic-content {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Centraliza o divider */
+    .divider {
+        margin: 8px auto;
+    }
+
+    /* Torna a imagem responsiva e remove a margem à esquerda */
+    .topic-image img {
+        max-width: 100%;
+        margin-left: 0;
+    }
 }

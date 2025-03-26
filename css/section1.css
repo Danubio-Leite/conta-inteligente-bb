@@ -66,3 +66,49 @@
 .cta-button:hover {
     background-color: #3333BD;
 }
+
+/* Media Queries para Mobile */
+@media only screen and (max-width: 768px) {
+
+    /* Ajustes na seção */
+    #section1 {
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    /* Redução do tamanho do logo */
+    #section1 img.logo {
+        width: 200px;
+        top: 10px;
+        right: 5px;
+    }
+
+    /* Centralizando o conteúdo e removendo o posicionamento absoluto */
+    .section1-content {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        text-align: center;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .section1-content h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .section1-content p {
+        text-align: center;
+    }
+
+    /* Ajustando o botão de CTA */
+    .cta-button {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        left: auto;
+        display: block;
+    }
+}
