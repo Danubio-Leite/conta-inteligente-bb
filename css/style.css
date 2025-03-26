@@ -8,7 +8,7 @@
 /* 1. Declaração das fontes personalizadas */
 @font-face {
     font-family: 'BancoDoBrasilTitulos';
-    src: url('../assets/fonts/BancoDoBrasilTitulos-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/BancoDoBrasilTitulos-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,7 +34,7 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    /* Altura fixa do header */
+    border-bottom: 4px solid #465EFF;
 }
 
 footer {
@@ -120,7 +120,7 @@ section h2 {
 /* Estilização dos textos */
 .section1-content h2 {
     font-family: 'BancoDoBrasilTitulos', sans-serif;
-    color: #3333BD;
+    color: #465EFF;
     margin-bottom: 20px;
     font-size: 3rem;
     text-align: left;
