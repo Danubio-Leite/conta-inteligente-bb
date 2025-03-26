@@ -1,22 +1,27 @@
-<section id="section4" class="tester-section">
+<!-- Em seu documento completo, inclua o link do CSS na tag <head> -->
+<head>
   <link rel="stylesheet" href="css/section4.css">
-  <div class="card">
-    <h2>Seja um Tester</h2>
-    <p class="subtitle">Cadastre-se e garanta acesso antecipado ao app que vai revolucionar o mercado bancário!</p>
-    <form action="#" method="POST">
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-      </div>
-      <div class="form-group">
-        <label for="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
-      </div>
-      <button type="submit" class="btn-cadastrar">Cadastrar</button>
-    </form>
-  </div>
-</section>
+</head>
+<body>
+  <section id="section4" class="tester-section" aria-labelledby="section4-title">
+    <div class="card">
+      <h2 id="section4-title">Seja um Tester</h2>
+      <p class="subtitle">Cadastre-se e garanta acesso antecipado ao app que vai revolucionar o mercado bancário!</p>
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
+        </div>
+        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+      </form>
+    </div>
+  </section>
+</body>
