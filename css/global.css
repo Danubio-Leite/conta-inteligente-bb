@@ -38,6 +38,7 @@ header {
     justify-content: space-between;
     height: 50px;
     border-bottom: 4px solid #465EFF;
+    padding: 0 20px;
 }
 
 .header-logo {
@@ -74,14 +75,21 @@ footer {
         flex-direction: column;
         height: auto;
         padding: 10px;
+        align-items: center;
     }
 
     header nav ul {
         flex-direction: column;
         margin-top: 10px;
+        gap: 10px;
     }
 
     .header-logo {
         width: 100px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 10px 5px;
     }
 }
