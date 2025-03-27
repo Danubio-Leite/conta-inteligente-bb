@@ -15,14 +15,6 @@
     justify-content: center;
 }
 
-#section1 img.logo {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    width: 300px;
-    height: auto;
-    opacity: 0.4;
-}
 
 .section1-content {
     position: absolute;
@@ -35,13 +27,23 @@
 .section1-content h2 {
     font-family: 'BancoDoBrasilTitulos', sans-serif;
     color: #465EFF;
-    margin-bottom: 20px;
-    font-size: 3rem;
+    font-size: 70px;
     text-align: left;
+    line-height: 1.1;
+    
+}
+
+.section1-content .titulo {
+    text-align: left;
+    font-size: 40px;
+    color: #465EFF;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    font-family: 'BancoDoBrasilTextos', sans-serif;
 }
 
 .section1-content p {
-    text-align: left;
+    text-align: justify;
     margin-bottom: 20px;
 }
 

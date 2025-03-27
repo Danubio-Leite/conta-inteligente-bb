@@ -52,6 +52,14 @@
     flex-direction: column;
 }
 
+.form-info {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: -20px;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
 #section4.tester-section .card label {
     margin-bottom: 5px;
     font-weight: bold;
@@ -114,6 +122,7 @@
         font-size: 1rem;
         margin-bottom: 20px;
     }
+
 
     /* Ajusta inputs e botão para melhor leitura */
     #section4.tester-section .card input {

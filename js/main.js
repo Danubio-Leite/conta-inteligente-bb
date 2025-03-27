@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent('components/header.html', 'header');
     loadComponent('components/footer.html', 'footer');
 
-    // Carrega as seções
+    // Carrega as seções e, após o carregamento, adiciona os event listeners
     const mainContent = document.getElementById('main-content');
     async function loadSectionsSequentially() {
         const sections = [
@@ -20,6 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
             } catch (error) {
                 console.error('Erro ao carregar a seção:', error);
             }
+        }
+        // Após carregar todas as seções, os inputs já estarão no DOM.
+        const agencia = document.getElementById('agencia');
+        const conta = document.getElementById('conta');
+
+        if (agencia) {
+            agencia.addEventListener('input', function (e) {
+                e.target.value = maskAgencia(e.target.value);
+            });
+        }
+        if (conta) {
+            conta.addEventListener('input', function (e) {
+                e.target.value = maskConta(e.target.value);
+            });
         }
     }
     loadSectionsSequentially();
@@ -83,4 +97,28 @@ function loadComponent(url, elementId) {
             document.getElementById(elementId).innerHTML = html;
         })
         .catch(error => console.error('Erro ao carregar o componente:', error));
+}
+
+// Função para aplicar máscara à Agência
+function maskAgencia(value) {
+    let digits = value.replace(/\D/g, '');
+    if (digits.length > 5) {
+        digits = digits.substring(0, 5);
+    }
+    if (digits.length > 1) {
+        return digits.slice(0, digits.length - 1) + '-' + digits.slice(-1);
+    }
+    return digits;
+}
+
+// Função para aplicar máscara à Conta
+function maskConta(value) {
+    let digits = value.replace(/\D/g, '');
+    if (digits.length > 8) {
+        digits = digits.substring(0, 8);
+    }
+    if (digits.length > 1) {
+        return digits.slice(0, digits.length - 1) + '-' + digits.slice(-1);
+    }
+    return digits;
 }

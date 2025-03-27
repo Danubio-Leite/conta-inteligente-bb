@@ -1,27 +1,29 @@
-<!-- Em seu documento completo, inclua o link do CSS na tag <head> -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <title>Máscara Agência e Conta</title>
   <link rel="stylesheet" href="css/section4.css">
 </head>
 <body>
   <section id="section4" class="tester-section" aria-labelledby="section4-title">
     <div class="card">
-      <h2 id="section4-title">Seja um Tester</h2>
-      <p class="subtitle">Cadastre-se e garanta acesso antecipado ao app que vai revolucionar o mercado bancário!</p>
+      <h2 id="section4-title">Experimente</h2>
+      <p class="subtitle">Faça um upgrade em sua conta e experimente toda praticidade e segurança da Conta Inteligente BB.</p>
       <form action="#" method="POST">
         <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+          <label for="agencia">Agência</label>
+          <input type="text" id="agencia" name="agencia" placeholder="Agência" required>
         </div>
+        <p class="form-info">Informe sua agência com o dígito</p>
         <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+          <label for="conta">Conta</label>
+          <input type="text" id="conta" name="conta" placeholder="Conta" required>
         </div>
-        <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="Seu telefone" required>
-        </div>
-        <button type="submit" class="btn-cadastrar">Cadastrar</button>
+        <p class="form-info">Informe sua conta com o dígito</p>
+  
+        <button type="submit" class="btn-cadastrar">Solicitar Upgrade</button>
+        <p class="conta">Ainda não tem uma conta? <a href="https://www.bb.com.br/site/pra-voce/contas/conta-corrente/">Abra a sua!</a></p>
       </form>
     </div>
   </section>
-</body>
