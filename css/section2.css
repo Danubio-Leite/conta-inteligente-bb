@@ -96,6 +96,22 @@
     transform: translateY(-5px);
 }
 
+@media only screen and (min-width: 769px) {
+
+    /* Garante que o corpo do card esteja sempre visível */
+    .card-body {
+        height: auto !important;
+        opacity: 1 !important;
+        padding: 15px 30px !important;
+        overflow: visible;
+    }
+
+    /* Impede que o cabeçalho reaja aos cliques */
+    .card-header {
+        pointer-events: none;
+    }
+}
+
 /* Responsividade: Ajustes para Mobile */
 @media only screen and (max-width: 768px) {
 
