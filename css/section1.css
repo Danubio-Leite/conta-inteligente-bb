@@ -93,10 +93,8 @@
         transform: none;
         max-width: 100%;
         text-align: left;
-        /* alinhado à esquerda */
         padding: 20px;
         margin: 0;
-        /* sem centralização */
     }
 
     .section1-content h2 {
@@ -106,6 +104,7 @@
 
     .section1-content p {
         text-align: left;
+        padding-right: 25px;
     }
 
     /* Ajustando o botão de CTA */

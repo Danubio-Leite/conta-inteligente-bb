@@ -72,7 +72,7 @@ footer {
 /* Regras Globais de Responsividade */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
         height: auto;
         padding: 10px;
         align-items: center;
