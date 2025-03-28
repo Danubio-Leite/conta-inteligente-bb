@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const userMessageInput = document.getElementById("userMessage");
     const chatWindow = document.getElementById("chat-window");
 
-    // Variável global para armazenar o prompt inicial do atendimento
+    // Variável global para armazenar o prompt inicial e o histórico de mensagens
     let initialPrompt = "";
+    let conversationHistory = [];
 
     // Configuração inicial: coleta dos dados do usuário e exibição do chat
     setupForm.addEventListener("submit", function (event) {
@@ -39,28 +40,27 @@ document.addEventListener("DOMContentLoaded", function () {
             // Exibe a saudação personalizada
             greetingElement.textContent = `Olá ${name}, tudo bem? Como posso lhe ajudar hoje?`;
 
-            // Monta o prompt inicial para a API e o armazena na variável global
-            initialPrompt = `Você é um assistente financeiro do Banco do Brasil e deve fingir realizar movimentações financeiras, dar sugestões de investimentos, realizar oferta e contratação de produtos financeiros comercializados pelo Banco do Brasil. Você está atendendo o cliente ${name}, que possui saldo em conta corrente de ${balance}, sua idade é de ${age} anos e possui um perfil de investimentos ${investmentProfile}. Segue a mensagem do ${name} para que realize o atendimento:`;
+            // Monta o prompt inicial para a API e armazena na variável global
+            initialPrompt = `Você é um assistente financeiro do Banco do Brasil e deve fingir realizar movimentações financeiras, dar sugestões de investimentos, realizar oferta e contratação de produtos financeiros comercializados pelo Banco do Brasil. Você está atendendo o cliente ${name}, que possui saldo em conta corrente de ${balance}, sua idade é de ${age} anos e possui um perfil de investimentos ${investmentProfile}. Sempre que possível, limite suas respostas a 400 caracteres.`;
+
+            // Inicializa o histórico de mensagens com o prompt do sistema
+            conversationHistory = [
+                { role: "system", content: initialPrompt }
+            ];
 
             console.log("Prompt inicial:", initialPrompt);
         }, 1000);
     });
 
-    // Função para enviar o prompt à API da OpenAI e retornar a resposta
-    async function enviarParaAPI(prompt) {
+    // Função para enviar o histórico de mensagens à API da OpenAI e retornar a resposta
+    async function enviarParaAPI(messages) {
         const chave = ''; // Insira uma chave válida da API da OpenAI
         const url = 'https://api.openai.com/v1/chat/completions';
 
-        // Monta o payload da requisição
+        // Monta o payload da requisição utilizando o histórico completo
         const data = {
             model: "gpt-4o",
-            messages: [
-                {
-                    role: "system",
-                    content: "Você é um assistente financeiro do Banco do Brasil e deve fingir realizar movimentações financeiras, dar sugestões de investimentos, realizar oferta e contratação de produtos financeiros comercializados pelo Banco do Brasil."
-                },
-                { role: "user", content: prompt }
-            ],
+            messages: messages,
             max_tokens: 150,
             temperature: 0.7
         };
@@ -104,11 +104,15 @@ document.addEventListener("DOMContentLoaded", function () {
             userMessageInput.value = "";
             chatWindow.scrollTop = chatWindow.scrollHeight;
 
-            // Concatena o prompt inicial com a mensagem do usuário para formar o contexto completo
-            const promptCompleto = initialPrompt + " " + message;
+            // Adiciona a mensagem do usuário ao histórico de conversas
+            conversationHistory.push({ role: "user", content: message });
 
-            // Envia o prompt completo para a API e exibe a resposta
-            const resposta = await enviarParaAPI(promptCompleto);
+            // Envia o histórico completo para a API e exibe a resposta
+            const resposta = await enviarParaAPI(conversationHistory);
+
+            // Adiciona a resposta da API ao histórico de conversas
+            conversationHistory.push({ role: "assistant", content: resposta });
+
             exibirResposta(resposta);
         }
     });
