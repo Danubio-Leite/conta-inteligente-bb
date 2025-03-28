@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimente - Banco do Brasil</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/experimente.css"> 
+</head>
+<body>
+  <div id="header"></div>
+
+  <main id="main-content">
+    <!-- Conteúdo de configuração do atendimento -->
+    <div id="setup-container">
+      <h2>Inicie seu atendimento</h2>
+      <form id="setup-form">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" id="name" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Idade:</label>
+          <input type="number" id="age" placeholder="Sua idade" required>
+        </div>
+        <div class="form-group">
+          <label for="balance">Saldo em Conta:</label>
+          <input type="number" id="balance" placeholder="Seu saldo" required step="0.01">
+        </div>
+        <div class="form-group">
+          <label for="investmentProfile">Perfil de Investimentos:</label>
+          <select id="investmentProfile" required>
+            <option value="" disabled selected>Selecione um perfil</option>
+            <option value="Conservador">Conservador</option>
+            <option value="Moderado">Moderado</option>
+            <option value="Arrojado">Arrojado</option>
+          </select>
+        </div>
+        <button type="submit" id="startButton">Começar</button>
+      </form>
+    </div>
+    
+    <!-- Spinner exibido durante o processamento -->
+    <div id="spinner" class="spinner" style="display: none;"></div>
+    
+    <!-- Área de chat (inicialmente oculta) -->
+    <div id="chat-container" style="display: none;">
+      <div id="chat-window">
+        <div class="message bot-message">
+          <p id="greeting"></p>
+        </div>
+        <!-- As futuras mensagens serão inseridas aqui -->
+      </div>
+      <div id="chat-input-container">
+        <input type="text" id="userMessage" placeholder="Digite sua mensagem...">
+        <button id="sendButton">Enviar</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/experimente.js"></script>
+</body>
+</html>

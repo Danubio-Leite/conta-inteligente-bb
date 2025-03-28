@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Carrega componentes externos (header e footer)
-    loadComponent('components/header.html', 'header');
+    // Verifica se é a página Experimente (pode ser adaptado conforme sua lógica, aqui usamos o título)
+    const isExperimentePage = document.title.includes("Experimente");
+
+    // Carrega os componentes externos (header e footer)
+    // Se for Experimente, carrega um header específico; caso contrário, o header padrão.
+    if (isExperimentePage) {
+        loadComponent('components/header-experimente.html', 'header');
+    } else {
+        loadComponent('components/header.html', 'header');
+    }
     loadComponent('components/footer.html', 'footer');
 
-    // Caso exista o elemento main-content, carrega as seções dinamicamente
+    // Se não for a página Experimente, carrega as seções dinâmicas (apenas na tela principal)
     const mainContent = document.getElementById('main-content');
-    if (mainContent) {
+    if (mainContent && !isExperimentePage) {
         async function loadSectionsSequentially() {
             const sections = [
                 'pages/section1.html',
