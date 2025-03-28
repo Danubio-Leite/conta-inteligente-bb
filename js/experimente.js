@@ -6,6 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const sendButton = document.getElementById("sendButton");
     const userMessageInput = document.getElementById("userMessage");
     const chatWindow = document.getElementById("chat-window");
+    const balanceInput = document.getElementById("balance");
+
+    // Função para aplicar máscara de moeda em Real
+    function formatarMoedaBR(value) {
+        // Remove todos os caracteres que não são dígitos
+        const numericValue = value.replace(/\D/g, '');
+        if (numericValue === "") return "";
+        // Converte para número e formata dividindo por 100 (centavos)
+        const valorEmReal = parseFloat(numericValue) / 100;
+        return valorEmReal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    // Aplica a máscara enquanto o usuário digita
+    balanceInput.addEventListener("input", function (e) {
+        const cursorPosition = balanceInput.selectionStart;
+        const valorFormatado = formatarMoedaBR(e.target.value);
+        e.target.value = valorFormatado;
+        // Nota: ajustes finos de posição do cursor podem ser feitos se necessário
+    });
 
     // Variável global para armazenar o prompt inicial e o histórico de mensagens
     let initialPrompt = "";
